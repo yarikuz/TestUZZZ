@@ -13,7 +13,7 @@ public class Authenticator extends AbstractAccountAuthenticator {
     public Authenticator(Context context) {
         super(context);
     }
-
+    @Override
     public Bundle getAccountRemovalAllowed(AccountAuthenticatorResponse response, Account account) {
         Bundle result = new Bundle();
         boolean allowed = true; // or whatever logic you want here

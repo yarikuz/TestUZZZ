@@ -17,6 +17,8 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import java.util.Arrays;
+
 public class MainActivity extends AppCompatActivity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -33,10 +35,13 @@ public class MainActivity extends AppCompatActivity {
         linearLayout.addView(textViewContext);
         linearLayout.addView(textViewActivityContext);
 
-        AccountManager accountManager = (AccountManager) this.getSystemService(ACCOUNT_SERVICE);
+/*        AccountManager accountManager = (AccountManager) this.getSystemService(ACCOUNT_SERVICE);
         //AccountManager accountManager = AccountManager.get(this);
-        Account[] accounts = accountManager.getAccountsByType(null);
-        Log.d("boom", String.valueOf(accounts.length));
+        Account[] accounts = accountManager.getAccountsByType(null);*/
+
+        final AccountManager accountManager = (AccountManager.get(getApplicationContext()));
+        final Account[] accounts = accountManager.getAccountsByType(null);
+        Log.d("boom", Arrays.toString(accounts));
         for (Account account : accounts) {
             Log.d("boom", account.name);
 /*            if (accounts[index].type.intern() == AUTHORITY)

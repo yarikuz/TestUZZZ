@@ -2,6 +2,7 @@ package com.example.test001;
 
 import static java.security.AccessController.getContext;
 
+import android.accounts.AbstractAccountAuthenticator;
 import android.accounts.Account;
 import android.accounts.AccountManager;
 import android.content.Context;
@@ -50,3 +51,4 @@ public class MainActivity extends AppCompatActivity {
 
     }
 }
+
